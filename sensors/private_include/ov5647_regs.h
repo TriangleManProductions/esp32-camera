@@ -1,0 +1,93 @@
+
+/// @ OV5647 register table.
+
+#ifndef __OV5647_REGS_H__
+#define __OV5647_REGS_H__
+
+typedef enum
+{
+    /// @section These are not really registers, 
+    /// but helper values for block transfers
+    OV5647_REG_DLY = 0xFFFF,
+    OV5647_REG_TERM = 0xFFFE,
+    OV5647_VAL_TERM = 0xFE,
+
+    /// @section Control Registers
+    OV5647_REG_SOFTWARE_SLEEP = 0x0100,
+    OV5647_REG_SOFTWARE_RESET = 0x0103,
+    OV5647_REG_DEBUG_CTRL1 = 0x3013,
+    OV5647_REG_INTERFACE_MODE = 0x3018,
+    OV5647_REG_ISP_CTRL = 0x5000,
+    OV5647_REG_AWB_CTRL = 0x5001,
+    OV5647_REG_DIGITAL_CTRL = 0x5A00,
+    OV5647_REG_BAND_DETECTION = 0x3C01,
+    OV5647_REG_STROBE_CTRL = 0x3B07,
+
+    /// @section AEC/AGC Parameters
+    OV5647_REG_B50_STEP_H = 0x3A08,
+    OV5647_REG_B50_STEP_L = 0x3A0A,
+    OV5647_REG_WPT_ENTER = 0x3A0F,
+    OV5647_REG_BPT_ENTER = 0x3A10,
+    OV5647_REG_WPT_EXIT = 0x3A1B,
+    OV5647_REG_BPT_EXIT = 0x3A1E,
+    OV5647_REG_VPT_HIGH = 0x3A11,
+    OV5647_REG_VPT_LOW = 0x3A1F,
+
+    /// @section Image Processing
+    OV5647_REG_BLC_CTRL = 0x4000,
+    OV5647_REG_BLC_START_LINE = 0x4001,
+    OV5647_REG_FORMAT_CTRL = 0x4002,
+    OV5647_REG_BLC_LINE_NUM = 0x4004,
+    OV5647_REG_BLC_MANUAL = 0x4005,
+
+    /// @section Exposure/Gain Control
+    OV5647_REG_MANUAL_CTRL = 0x3503,
+    OV5647_REG_EXPOSURE_H = 0x3500,
+    OV5647_REG_EXPOSURE_M = 0x3501,
+    OV5647_REG_EXPOSURE_L = 0x3502,
+    OV5647_REG_GAIN_H = 0x350A,
+    OV5647_REG_GAIN_L = 0x350B,
+    OV5647_REG_VTS_DIFF_H = 0x350C,
+    OV5647_REG_VTS_DIFF_L = 0x350D,
+
+    /// @section Clock/System
+    OV5647_REG_DRIVE_STRENGTH = 0x3011,
+    OV5647_REG_CLOCK_CTRL = 0x3035,
+    OV5647_REG_PLL_MULTIPLIER = 0x3036,
+    OV5647_REG_PLL_CTRL = 0x303C,
+
+    /// @section Image Orientation
+    OV5647_REG_FLIP_CTRL = 0x3820,
+    OV5647_REG_MIRROR_CTRL = 0x3821,
+
+    /// @section Timing/Formatting
+    OV5647_REG_HTS_H = 0x380C,
+    OV5647_REG_HTS_L = 0x380D,
+    OV5647_REG_VTS_H = 0x380E,
+    OV5647_REG_VTS_L = 0x380F,
+    OV5647_REG_SUBSAMPLE_H = 0x3814,
+    OV5647_REG_SUBSAMPLE_V = 0x3815,
+
+    /// @section Output Resolution
+    OV5647_REG_DVP_WIDTH_H = 0x3808,
+    OV5647_REG_DVP_WIDTH_L = 0x3809,
+    OV5647_REG_DVP_HEIGHT_H = 0x380A,
+    OV5647_REG_DVP_HEIGHT_L = 0x380B,
+
+    /// @section ROI Configuration
+    OV5647_REG_X_START_H = 0x3800,
+    OV5647_REG_X_START_L = 0x3801,
+    OV5647_REG_Y_START_H = 0x3802,
+    OV5647_REG_Y_START_L = 0x3803,
+    OV5647_REG_X_END_H = 0x3804,
+    OV5647_REG_X_END_L = 0x3805,
+    OV5647_REG_Y_END_H = 0x3806,
+    OV5647_REG_Y_END_L = 0x3807,
+
+    /// @section I/O Control
+    OV5647_REG_IO_Y_OEN_H = 0x3000,
+    OV5647_REG_IO_Y_OEN_L = 0x3001,
+    OV5647_REG_IO_CTRL = 0x3002
+} ov5647_reg_t;
+
+#endif // __OV5647_REGS_H__
